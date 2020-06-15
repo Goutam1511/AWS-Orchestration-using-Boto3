@@ -1,3 +1,7 @@
+'''
+A simple script to convert an OVA present in a S3 Bucket to custom AMI.
+'''
+
 import boto3
 
 aws_access_key_id = <AWS-ACCESS-KEY-HERE>
