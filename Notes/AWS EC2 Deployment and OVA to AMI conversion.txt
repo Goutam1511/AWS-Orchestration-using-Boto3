@@ -1,4 +1,4 @@
-Steps to convert an OVA to AMI:
+Steps to convert an OVA to AMI manually:
 
 1) Install AWS CLI.
 2) Create a S3 Bucket and upload the OVA into it.
@@ -9,7 +9,7 @@ Steps to convert an OVA to AMI:
 
 4) Put the permissions in the newly created role from file "role-policy.json" using below command.
    
-   aws iam put-role-policy --role-name vmimport-backup --policy-name vmimport --policy-document "file://role-policy.json"
+   aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://role-policy.json"
 
 5) Convert OVA to AMI using below command.
 
@@ -35,7 +35,7 @@ Basic Steps to create an AWS EC2:
 4) Create an Internet Gateway by giving a suitable name.(Dashboard->Services->VPC->Internet Gateways->Give inputs)
 5) Create a seperate route table and add an entry to that table for the Gateway and attach that route table
    to the created subnet. 
-6) Finally create a t2.large EC2 instance from the converted AMI's of Cloudpeak OVA from "My AMI"-s.
+6) Finally create a t2.large EC2 instance from the converted AMI's of OVA from "My AMI"-s.
 7) While creating EC2 instance, a default security group will be created. Edit it later as per requirement.
 8) While creating EC2 instance, make sure of these steps -
    a) Choose the VPC created
