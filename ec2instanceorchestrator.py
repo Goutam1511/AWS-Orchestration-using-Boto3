@@ -1,3 +1,11 @@
+'''
+This script creates an EC2 instance from a custom AMI ID and keeps the instance alive for 3 minutes (can be modified as per needs).
+Before creating the EC2 instance, it creates a VPC of CIDR Block - 10.0.0.0/16 & a subnet of 10.0.0.0/24 (Can be modified as per needs).
+It also creates an Internet Gateway and a route table for the Gateway and required route to open the traffic for VPC. It also associates
+the route table for Gateway with the created subnet. After terminating the created instances, it deallocates all the allocated resources
+automatically. The script is crude in the sense, it assumes no exceptions and only serves the required functionalities. The parameters are
+all hardcoded for easy use. It assumes AWS access credentials, AWS CLI configurations and all the required dependencies already present.
+'''
 import boto3
 from time import sleep
 ec2 = boto3.resource('ec2')
